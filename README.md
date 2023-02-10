@@ -1,2 +1,1 @@
-# polarplayground
-Polar Playground Website
+# Polar Playground website
