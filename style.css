@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.4;
+}
+
+#interior-img {
+    width: 100%;
+}
+
+.nav-ul {
+    float: right;
+    margin: 0;
+}
+
+.nav-item {
+    display: inline-block;
+}
