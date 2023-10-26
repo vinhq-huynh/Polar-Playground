@@ -5,19 +5,85 @@ body {
 .navbar {
     height: 70px;
     width: 100%;
-    background-color: black;
-    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /*To stack navbar and title-img*/
+    z-index: 4;
+    position: fixed;
 }
 
-#interior-img {
+#title-img {
+    bottom: 70px;
     width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+    /*To stack navbar and title-img*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .nav-ul {
+    height: 70px;
     float: right;
     margin: 0;
+    margin-right: 100px;
+    padding: 0;
+
+    /*To center the nav-item vertically*/
+    display: flex;
+    align-items: center;
 }
 
-.nav-item {
+.nav-li {
     display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-li a {
+    text-decoration: none;
+    color: lightgray;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: 200;
+}
+
+.nav-li a:hover, .nav-li a.active-page {
+    color: white;
+    font-weight: 600;
+}
+
+.title-img-overlay {
+    width: 100%;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.title-text {
+    color: white;
+    position: relative;
+    z-index: 3;
+    margin: 0;
+
+    text-align: right;
+    margin-right: 150px;
+}
+
+.title-header {
+    padding-top: 200px;
+}
+
+/* SHOWCASE SECTION */
+.showcase-section {
+    width: 100%;
+    height: 800px;
+    background-color: black;
+    position: static;
 }
