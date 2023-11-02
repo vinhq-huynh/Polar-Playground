@@ -1,89 +1,206 @@
 body {
+    display: grid;
+    grid-template-rows: 80px 250px 300px 300px 300px;
     margin: 0;
 }
+
+/*********** NAV BAR ***********/
 
 .navbar {
-    height: 70px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-
-    /*To stack navbar and title-img*/
-    z-index: 4;
-    position: fixed;
-}
-
-#title-img {
-    bottom: 70px;
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-
-    /*To stack navbar and title-img*/
-    position: absolute;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0 15%;
+    
+    position: sticky;
     top: 0;
-    left: 0;
-    z-index: 1;
+
+    grid-row: 1;
+    grid-column: 1 / -1;
+    display: flex;
+
+    transition: all 0.5s;
 }
 
-.nav-ul {
-    height: 70px;
-    float: right;
-    margin: 0;
-    margin-right: 100px;
-    padding: 0;
+.navbar-scrolled {
+    background-color: black;
+}
 
-    /*To center the nav-item vertically*/
+.nav-brand {
+    justify-self: flex-start;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.nav-li {
-    display: inline-block;
-    margin: 0 15px;
+.nav-brand-img {
+    height: 80%;
+    border-radius: 50%;
 }
 
-.nav-li a {
+.nav-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.nav-li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 80px;
+
     text-decoration: none;
     color: lightgray;
     text-transform: uppercase;
     font-family: 'Raleway';
     font-weight: 200;
+    font-size: 1rem;
 }
 
-.nav-li a:hover, .nav-li a.active-page {
+a.nav-li.active-page {
     color: white;
     font-weight: 600;
+    border-bottom: 0.1px solid white;
 }
 
-.title-img-overlay {
+a.nav-li:hover {
+    color: white;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*********** BG 1 ***********/
+
+.bg-1 {
+    background-image: url(assets/images/interior.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-row: 1 / span 2;
+    grid-column: 1 / -1;
+}
+
+.bg-1-overlay {
     width: 100%;
-    height: 500px;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
+}
+
+/*********** TITLE SECTION ***********/
+
+.title-section {
+    margin: 60px 100px 0 100px;
+
+    grid-row: 2 / span 2;
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 100px 100px;
+
+    color: white;
+    font-family: 'Raleway';
+}
+
+.title-img {
+    grid-row: 1 / span 3;
+
+    display: flex;
+    justify-content: center;
+}
+
+.title-img > img {
+    height: 300px;
+    border-radius: 20px;
 }
 
 .title-text {
-    color: white;
-    position: relative;
-    z-index: 3;
+    grid-area: 1 / 2 / 2 / 3;
     margin: 0;
-
-    text-align: right;
-    margin-right: 150px;
+    text-align: center;
 }
 
-.title-header {
-    padding-top: 200px;
+.title-text > h1 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-family: 'Lilita One';
+    margin: 0;
 }
 
-/* SHOWCASE SECTION */
+.title-text > p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.title-button {
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-button > a {
+    width: 200px;
+    height: 50px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: 'Raleway';
+    margin-bottom: 15px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.wait-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;
+    font-size: 0.9rem;
+}
+
+.menu-button:hover {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    font-size: 0.9rem;
+}
+
+.title-button > .menu-button {
+    background-color: #110066;
+}
+
+.title-button > .wait-button {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.title-footer {
+    grid-area: 3 / 2 / 4 / 3;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.title-footer-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+/*********** SHOWCASE SECTION ***********/
+
 .showcase-section {
-    width: 100%;
-    height: 800px;
+    grid-row: 3 ;
+    grid-column: 1 / -1;
     background-color: black;
-    position: static;
+    z-index: -1;
+
+    height: 300px;
 }
