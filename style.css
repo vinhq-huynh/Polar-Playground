@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-template-rows: 80px 250px 300px 300px 300px;
+    grid-template-rows: 80px 250px 150px 400px 300px;
     margin: 0;
 }
 
@@ -92,14 +92,14 @@ a.nav-li:hover {
 /*********** TITLE SECTION ***********/
 
 .title-section {
-    margin: 60px 100px 0 100px;
+    margin: 60px 100px 0 150px;
 
     grid-row: 2 / span 2;
     grid-column: 1 / -1;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(3, 100px);
 
     color: white;
     font-family: 'Raleway';
@@ -109,11 +109,19 @@ a.nav-li:hover {
     grid-row: 1 / span 3;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .title-img > img {
-    height: 300px;
+    height: 100%;
+    border-radius: 20px;
+    transition-duration: 200ms;
+
+}
+
+.title-img > img:hover {
+    height: 105%;
+    transform: rotate(-5deg);
     border-radius: 20px;
 }
 
@@ -125,6 +133,9 @@ a.nav-li:hover {
 
 .title-text > h1 {
     text-transform: uppercase;
+    text-shadow: rgb(217, 174, 0) 1px 0 10px;
+    letter-spacing: 4px;
+    word-spacing: 8px;
     font-size: 3.5rem;
     font-family: 'Lilita One';
     margin: 0;
@@ -138,7 +149,7 @@ a.nav-li:hover {
 .title-button {
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -149,9 +160,9 @@ a.nav-li:hover {
     border: 0;
     border-radius: 5px;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-family: 'Raleway';
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-decoration: none;
 
     display: flex;
@@ -162,16 +173,16 @@ a.nav-li:hover {
 
 .wait-button:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .menu-button:hover {
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-    font-size: 0.9rem;
+    box-shadow: rgba(21, 140, 200, 0.4) 5px 5px, rgba(21, 140, 200, 0.3) 10px 10px, rgba(21, 140, 200, 0.2) 15px 15px, rgba(21, 140, 200, 0.1) 20px 20px, rgba(21, 140, 200, 0.05) 25px 25px;
+    font-size: 1rem;
 }
 
 .title-button > .menu-button {
-    background-color: #110066;
+    background-color: rgb(21, 140, 200);
 }
 
 .title-button > .wait-button {
@@ -183,24 +194,33 @@ a.nav-li:hover {
     text-transform: uppercase;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .title-footer-number {
     display: block;
+    font-family: 'Lilita One';
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     padding-bottom: 5px;
 }
 
-/*********** SHOWCASE SECTION ***********/
-
-.showcase-section {
-    grid-row: 3 ;
+.divider {
+    grid-row: 3;
     grid-column: 1 / -1;
     background-color: black;
     z-index: -1;
+}
 
-    height: 300px;
+/*********** SHOWCASE SECTION ***********/
+
+.showcase-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 4;
+    grid-column: 1 / -1;
+
+    background-color: black;
+    color: white;
 }
