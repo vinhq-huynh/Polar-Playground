@@ -1,6 +1,7 @@
 body {
     display: grid;
-    grid-template-rows: 80px 250px 150px 400px 300px;
+    grid-template-rows: 80px 250px 120px 500px 500px; /* (Navbar bg-1 divider title showcase ice-cream) */
+
     margin: 0;
 }
 
@@ -13,16 +14,18 @@ body {
     
     position: sticky;
     top: 0;
+    z-index: 5;
 
     grid-row: 1;
     grid-column: 1 / -1;
     display: flex;
 
-    transition: all 0.5s;
+    transition: all 0.4s;
 }
 
 .navbar-scrolled {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 1);
+    height: 80%;
 }
 
 .nav-brand {
@@ -73,12 +76,14 @@ a.nav-li:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-/*********** BG 1 ***********/
+/*********** BG-1 ***********/
 
 .bg-1 {
     background-image: url(assets/images/interior.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+
     grid-row: 1 / span 2;
     grid-column: 1 / -1;
 }
@@ -92,13 +97,13 @@ a.nav-li:hover {
 /*********** TITLE SECTION ***********/
 
 .title-section {
-    margin: 60px 100px 0 150px;
+    margin: 60px 100px 0 100px;
 
     grid-row: 2 / span 2;
     grid-column: 1 / -1;
 
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 30% 70%;
     grid-template-rows: repeat(3, 100px);
 
     color: white;
@@ -107,7 +112,6 @@ a.nav-li:hover {
 
 .title-img {
     grid-row: 1 / span 3;
-
     display: flex;
     justify-content: flex-end;
 }
@@ -116,7 +120,6 @@ a.nav-li:hover {
     height: 100%;
     border-radius: 20px;
     transition-duration: 200ms;
-
 }
 
 .title-img > img:hover {
@@ -209,14 +212,14 @@ a.nav-li:hover {
     grid-row: 3;
     grid-column: 1 / -1;
     background-color: black;
-    z-index: -1;
+    z-index: -2;
 }
 
 /*********** SHOWCASE SECTION ***********/
 
 .showcase-section {
-    /* display: grid; */
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    align-items: center;
     grid-row: 4;
     grid-column: 1 / -1;
 
@@ -224,66 +227,110 @@ a.nav-li:hover {
     color: white;
 }
 
-:root {
-    --gutter: 20px;
-  }
-  
-  .app {
-    padding: var(--gutter) 0;
-    display: grid;
-    grid-gap: var(--gutter) 0;
-    grid-template-columns: var(--gutter) 1fr var(--gutter);
-    align-content: start;
-  }
-  
-  .app > * {
-    grid-column: 2 / -2;
-  }
-  
-  .app > .full {
+.showcase-text {
+    width: 30%;
+    font-family: 'Raleway';
+    margin-left: 10%;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    grid-row: 1 / 1;
     grid-column: 1 / -1;
-  }
+
+    z-index: 3;
+}
+
+.showcase-text > h2 {
+    text-transform: uppercase;
+    font-family: 'Lilita One';
+    font-size: 2rem;
+}
+
+.showcase-text > p {
+    line-height: 25px;
+}
+
+.hs {
+    grid-row: 1 / 1;
+    grid-column: 1 / -1;
+
+    z-index: 2;
+}
+
+/*********** HC ***********/
+
   
   .hs {
     display: grid;
     grid-gap: calc(var(--gutter) / 2);
     grid-template-columns: 10px;
-    grid-template-rows: minmax(150px, 1fr);
+    grid-template-rows: 350px;
     grid-auto-flow: column;
     grid-auto-columns: calc(50% - var(--gutter) * 2);
   
     overflow-x: scroll;
     scroll-snap-type: x proximity;
-    padding-bottom: calc(.75 * var(--gutter));
-    margin-bottom: calc(-.25 * var(--gutter));
   }
   
-  .hs:before,
-  .hs:after {
-    content: '';
-    width: 10px;
-  }
-  
-  
-  /* Demo styles */
-  
-  
-  
-  .app {
+  /* MORE HC */
+  /* .app {
     width: 100%;
     height: 600px;
     background: black;
     overflow-y: scroll;
-  }
+  } */
   
   .hs > li,
-  .item {
+  .hs-item {
     scroll-snap-align: center;
-    padding: calc(var(--gutter) / 2 * 1.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
-    border-radius: 8px;
+    background: black;
+
+    width: 350px;
   }
+  
+  .hs-item-img {
+    height: 90%;
+    opacity: 0.2;
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+
+    .hs-item-img-focus {
+    height: 100%;
+    opacity: 1;
+  }
+
+/*********** BG-2 ***********/
+.bg-2 {
+    background-image: url(assets/images/291471599_562841592009948_5214425878930913768_n.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+
+    grid-row: 5;
+    grid-column: 1 / -1;
+}
+
+.bg-2-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*********** ICE CREAM ***********/
+.icecream-section {
+    grid-row: 5;
+    grid-column: 1 / -1;
+    display: grid;
+    justify-content: center;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Lilita One';
+    font-size: 2rem;
+    word-spacing: 8px;
+}
