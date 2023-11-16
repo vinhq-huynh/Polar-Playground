@@ -1,8 +1,15 @@
-body {
+body.index {
     display: grid;
-    grid-template-rows: 80px 250px 120px 500px 500px; /* (Navbar bg-1 divider title showcase ice-cream) */
-
+    grid-template-rows: 100px 280px 80px 500px 600px; /* (Navbar bg-1 divider title showcase ice-cream) */
     margin: 0;
+    font-family: 'Josefin Sans';
+}
+
+body.menu {
+    display: grid;
+    grid-template-rows: 80px 300px; /* (Navbar bg-1 divider title showcase ice-cream) */
+    margin: 0;
+    font-family: 'Josefin Sans';
 }
 
 /*********** NAV BAR ***********/
@@ -24,9 +31,9 @@ body {
 }
 
 .navbar-scrolled {
-    background-color: rgba(0, 0, 0, 1);
-    height: 80%;
-}
+    background-color: black;
+    height: 75%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
 
 .nav-brand {
     justify-self: flex-start;
@@ -48,20 +55,22 @@ body {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    gap: 2%;
 }
 
 .nav-li {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 80px;
+    /* flex-basis: 90px; */
 
     text-decoration: none;
     color: lightgray;
     text-transform: uppercase;
-    font-family: 'Raleway';
+    /* font-family: 'Raleway'; */
     font-weight: 200;
     font-size: 1rem;
+    padding: 5px;
 }
 
 a.nav-li.active-page {
@@ -86,6 +95,7 @@ a.nav-li:hover {
 
     grid-row: 1 / span 2;
     grid-column: 1 / -1;
+    z-index: -3;
 }
 
 .bg-1-overlay {
@@ -93,7 +103,6 @@ a.nav-li:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 /*********** TITLE SECTION ***********/
 
 .title-section {
@@ -103,11 +112,11 @@ a.nav-li:hover {
     grid-column: 1 / -1;
 
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: repeat(3, 100px);
+    /* grid-template-columns: 30% 70%; */
+    grid-template-rows: repeat(3, 110px);
 
     color: white;
-    font-family: 'Raleway';
+    font-family: 'Josefin Sans';
 }
 
 .title-img {
@@ -117,15 +126,7 @@ a.nav-li:hover {
 }
 
 .title-img > img {
-    height: 100%;
-    border-radius: 20px;
-    transition-duration: 200ms;
-}
-
-.title-img > img:hover {
-    height: 105%;
-    transform: rotate(-5deg);
-    border-radius: 20px;
+    transform: scaleX(-1);
 }
 
 .title-text {
@@ -136,72 +137,89 @@ a.nav-li:hover {
 
 .title-text > h1 {
     text-transform: uppercase;
-    text-shadow: rgb(217, 174, 0) 1px 0 10px;
+    text-shadow: rgb(174, 139, 0) 1px 0 10px;
     letter-spacing: 4px;
-    word-spacing: 8px;
-    font-size: 3.5rem;
-    font-family: 'Lilita One';
-    margin: 0;
+    font-size: 4rem;
+    font-family: 'Josefin Sans';
+    font-weight: 700;
+    margin: 0 0 15px 0;
 }
 
 .title-text > p {
     margin: 5px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 
 .title-button {
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
-    justify-content: space-evenly;
+    gap: 2%;
+    justify-content: center;
     align-items: center;
 }
 
+.fa-solid {
+    margin-right: 10px;
+}
+
 .title-button > a {
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 60px;
     color: white;
     border: 0;
-    border-radius: 5px;
+    border-radius: 30px;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    font-family: 'Raleway';
-    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 400;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
-}
-
-.wait-button:hover {
-    box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;
-    font-size: 1rem;
-}
-
-.menu-button:hover {
-    box-shadow: rgba(21, 140, 200, 0.4) 5px 5px, rgba(21, 140, 200, 0.3) 10px 10px, rgba(21, 140, 200, 0.2) 15px 15px, rgba(21, 140, 200, 0.1) 20px 20px, rgba(21, 140, 200, 0.05) 25px 25px;
-    font-size: 1rem;
+    transition: all 0.1s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .title-button > .menu-button {
-    background-color: rgb(21, 140, 200);
+    background-image: linear-gradient(144deg,#2600ff, #2679ff 50%,#00b4eb);
 }
 
 .title-button > .wait-button {
-    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    background-color: white;
+}
+
+.menu-button:hover {
+    box-shadow: rgba(21, 140, 200, 0.4) 5px 5px, rgba(21, 140, 200, 0.3) 10px 10px, rgba(21, 140, 200, 0.2) 15px 15px;
+    font-size: 1.05rem;
+}
+
+.wait-button:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px; */
+    color: black;
+    background-color: white;
 }
 
 .title-footer {
     grid-area: 3 / 2 / 4 / 3;
     text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 200;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 10px;
+}
+
+.title-footer > * {
+    flex-basis: 150px;
+    text-align: center;
 }
 
 .title-footer-number {
     display: block;
-    font-family: 'Lilita One';
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
@@ -211,8 +229,28 @@ a.nav-li:hover {
 .divider {
     grid-row: 3;
     grid-column: 1 / -1;
-    background-color: black;
+    background-color: rgb(47, 47, 47);
     z-index: -2;
+}
+
+@media (max-width: 1300px) {
+    .title-text > h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 80%;
+    }
+
+    .title-img {
+        display: none;
+    }
+
+    .showcase-section {
+        display: block;
+    }
 }
 
 /*********** SHOWCASE SECTION ***********/
@@ -223,18 +261,17 @@ a.nav-li:hover {
     grid-row: 4;
     grid-column: 1 / -1;
 
-    background-color: black;
+    background-color: rgb(47, 47, 47);
     color: white;
 }
 
 .showcase-text {
     width: 30%;
-    font-family: 'Raleway';
     margin-left: 10%;
-    padding: 2%;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding: 3%;
+    background-color: rgba(69, 69, 69, 0.8);
     border-radius: 10px;
-
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     grid-row: 1 / 1;
     grid-column: 1 / -1;
 
@@ -242,68 +279,79 @@ a.nav-li:hover {
 }
 
 .showcase-text > h2 {
+    margin: 0;
     text-transform: uppercase;
-    font-family: 'Lilita One';
     font-size: 2rem;
+    color: #ffffff;
 }
 
 .showcase-text > p {
     line-height: 25px;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
+
+.faq-button {
+    width: 35%;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    margin: auto;
+}
+
+.faq-button:hover {
+    color: black;
+    background-color: white;
+    /* box-shadow: rgba(21, 140, 200, 0.4) 5px 5px, rgba(21, 140, 200, 0.3) 10px 10px, rgba(21, 140, 200, 0.2) 15px 15px; */
+    font-size: 1rem;
+}
+
+/*********** HS ***********/
 
 .hs {
     grid-row: 1 / 1;
     grid-column: 1 / -1;
-
     z-index: 2;
-}
 
-/*********** HC ***********/
-
-  
-  .hs {
     display: grid;
-    grid-gap: calc(var(--gutter) / 2);
-    grid-template-columns: 10px;
-    grid-template-rows: 350px;
+    grid-template-rows: 400px;
     grid-auto-flow: column;
-    grid-auto-columns: calc(50% - var(--gutter) * 2);
+    /* grid-auto-columns: calc(50% - var(--gutter) * 2); */
   
-    overflow-x: scroll;
-    scroll-snap-type: x proximity;
-  }
+    overflow-x: hidden;
+    /* scroll-snap-type: x proximity; */
+}
   
-  /* MORE HC */
-  /* .app {
-    width: 100%;
-    height: 600px;
-    background: black;
-    overflow-y: scroll;
-  } */
-  
-  .hs > li,
-  .hs-item {
-    scroll-snap-align: center;
+.hs-item {
+    /* scroll-snap-align: center; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: black;
 
-    width: 350px;
-  }
+    width: 400px;
+}
   
-  .hs-item-img {
-    height: 90%;
-    opacity: 0.2;
+.hs-item-img {
+    height: 75%;
+    opacity: 0.4;
     border-radius: 10px;
     transition: all 0.3s;
-  }
+}
 
-    .hs-item-img-focus {
+.hs-item-img-focus, .elmo {
     height: 100%;
     opacity: 1;
-  }
+}
 
 /*********** BG-2 ***********/
 .bg-2 {
@@ -330,7 +378,19 @@ a.nav-li:hover {
 
     color: white;
     text-transform: uppercase;
-    font-family: 'Lilita One';
     font-size: 2rem;
     word-spacing: 8px;
+}
+
+.icecream-mini-menu {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 5;
+}
+
+.icecream-mini-menu > a {
+    background-image: url(assets/images/4characters.jpg);
 }
