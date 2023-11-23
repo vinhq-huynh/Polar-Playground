@@ -1,4 +1,4 @@
-const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.nav-bar');
 const hs_item_imgs = document.querySelectorAll('.hs-item-img');
 const bg1 = document.querySelector('.bg-1');
 

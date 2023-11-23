@@ -14,7 +14,7 @@ body.menu {
 
 /*********** NAV BAR ***********/
 
-.navbar {
+.nav-bar {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 0 15%;
@@ -376,12 +376,11 @@ a.nav-li:hover {
     display: grid;
     justify-content: center;
 
-    color: white;
-    text-transform: uppercase;
+    /* color: red;
     font-size: 2rem;
-    word-spacing: 8px;
+    word-spacing: 8px; */
 }
-
+/* 
 .icecream-mini-menu {
     height: 400px;
     width: 400px;
@@ -389,8 +388,4 @@ a.nav-li:hover {
     justify-content: space-between;
 
     z-index: 5;
-}
-
-.icecream-mini-menu > a {
-    background-image: url(assets/images/4characters.jpg);
-}
+} */
