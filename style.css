@@ -103,6 +103,13 @@ a.nav-li:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 700px) {
+    .bg-1 {
+        background-size: contain;
+        background-position: top;
+    }
+}
 /*********** TITLE SECTION ***********/
 
 .title-section {
