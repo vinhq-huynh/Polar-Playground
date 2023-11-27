@@ -8,6 +8,12 @@ body {
     grid-template-rows: 100px 300px 150px 500px; /* Nav-bar bg-1 divider showcase*/
 }
 
+@media screen and (max-width: 650px) {
+    .main-container {
+        grid-template-rows: 100px 300px 30px 500px; /* Nav-bar bg-1 divider showcase*/
+    }
+}
+
 /* NAV-BAR */
 .nav-bar-container {
     height: 100%;
@@ -227,14 +233,6 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width: 925px) {    
-    .title-img {
-        display: none;
-    }
-
-
-}
-
 @media screen and (max-width: 1150px) {
     .bg-1 {
         height: 350px;
@@ -249,7 +247,7 @@ body {
         height: 275px;
     }
 
-    .title-text > h1{
+    .title-text > h1 {
         font-size: 3rem;
     }
 
@@ -265,6 +263,36 @@ body {
         margin-top: 30px;
     }
 }
+
+@media screen and (max-width: 925px) {    
+    .title-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .bg-1 {
+        height: 320px;
+    }
+
+    .title-text > h1 {
+        font-size: 2rem;
+    }
+
+    .title-button > a {
+        width: 200px;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .title-footer {
+        font-size: 0.8rem;
+    }
+
+    .title-footer-number {
+        font-size: 1.5rem;
+    }
+} 
 /* TITLE FOOTER */
 .divider {
     grid-row: 3;
@@ -334,7 +362,6 @@ body {
 }
 
 .showcase-carousel {
-
 }
 
 .carousel-item > img {
@@ -372,6 +399,12 @@ body {
 
     .showcase-text {
         grid-row: 2;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .showcase-text {
+        margin: 20px;
     }
 }
 
