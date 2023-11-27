@@ -95,22 +95,14 @@ body {
 
 /* BG-1 */
 .bg-1 {
-    height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/images/interior.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right;
-    background-attachment: fixed;
+    background-position: top right;
+    /* background-attachment: fixed; */
 
     grid-row: 1 / span 2;
     grid-column: 1;
-}
-
-@media screen and (max-width: 400px) {
-    .bg-1 {
-        background-size: auto;
-        background-position: top;
-    }
 }
 
 /* TITLE */
@@ -295,7 +287,6 @@ body {
     min-width: 400px;
 
     margin: auto;
-    margin-left: 20px;
     padding: 40px;
 
     background-color: rgba(69, 69, 69, 0.8);
