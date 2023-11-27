@@ -1,6 +1,4 @@
-const navbar = document.querySelector('.nav-bar');
-const hs_item_imgs = document.querySelectorAll('.hs-item-img');
-const bg1 = document.querySelector('.bg-1');
+const navbar_container = document.querySelector('.nav-bar-container');
 
 window.addEventListener('scroll', () => {
     // if (window.scrollY > 0) {
@@ -10,19 +8,8 @@ window.addEventListener('scroll', () => {
     // }
 
     if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
+        navbar_container.classList.add('nav-bar-scrolled');
     } else if (window.scrollY <= 50) {
-        navbar.classList.remove('navbar-scrolled');
+        navbar_container.classList.remove('nav-bar-scrolled');
     }
 })
-
-// window.addEventListener('scroll', () => {
-//     for (var item of hs_item_imgs) {
-//         if (item.getBoundingClientRect().left < window.screen.width / 2) {
-//             item.classList.add('hs-item-img-focus');
-//         }
-//         else if (item.getBoundingClientRect().right < window.screen.width / 2) {
-//             item.classList.remove('hs-item-img-focus');
-//         }
-//     }
-// })
