@@ -1,0 +1,15 @@
+{
+  "name": "polar-playground",
+  "version": "1.0.0",
+  "description": "Polar Playground website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinh Huynh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
