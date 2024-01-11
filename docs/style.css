@@ -1,0 +1,308 @@
+body {
+    background-color: rgb(47, 47, 47);
+    font-family: 'Josefin Sans';
+}
+
+.main-container {
+    display: grid;
+    /* grid-template-rows: 100px 300px 150px 500px 500px; */
+    /* Nav-bar bg-1 divider showcase icecream*/
+
+    /* grid-template-rows: 6rem 18rem 8rem 35rem 40rem 40rem 20rem; */
+    grid-template-rows: 5rem 13rem 35rem 40rem 40rem 20rem;
+    grid-template-columns: 100%;
+
+}
+
+/**************************** NAV-BAR ****************************/
+.nav-bar-container {
+    height: 100%;
+    position: sticky;
+    top: 0;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 50;
+}
+
+.nav-bar {
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar-scrolled {
+    background-color: black;
+    height: 75%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.nav-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    height: 80%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.nav-link-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    color: white;
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.active-page {
+    border-bottom: 1px solid white;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 650px) {
+    .fa-bars {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .nav-link-container {
+        display: none;
+    }
+}
+
+
+
+/**************************** BG-1 ****************************/
+.bg-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/interior.jpeg);
+    background-size: cover;
+    background-position: top right;
+
+    grid-row: 1 / span 2;
+    grid-column: 1;
+}
+
+@media screen and (min-width: 925px) {
+    .bg-1 {
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/images/interior.jpeg);
+        background-attachment: fixed;
+    }
+}
+
+/**************************** TITLE ****************************/
+
+.title-container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: max-content auto;
+
+    grid-row: 2;
+    grid-column: 1;
+
+    margin: 60px auto 0 auto;
+    color: white;
+
+    z-index: 40;
+}
+
+.title-img {
+    grid-row: 1 / span 3;
+}
+
+.title-img > img {
+    height: 350px;
+    /* transform: scaleX(-1); */
+}
+
+.title-text {
+    grid-area: 1 / 2 / 2 / 3;
+    margin: 0;
+    text-align: center;
+}
+
+.title-text > h1 {
+    margin: 0;
+
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: rgb(225, 180, 0) 1px 0 10px;
+    letter-spacing: 4px;
+}
+
+.title-text > p {
+    margin: 0;
+
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.title-button {
+    grid-area: 2 / 2 / 3 / 3;
+
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* For Font Awesome icon */
+.fa-horse, .fa-circle {
+    margin-right: 10px;
+}
+
+.title-button > a {
+    width: 250px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title-button > .menu-button {
+    background-image: linear-gradient(144deg,#2600ff, #2679ff 50%,#00b4eb);
+}
+
+.menu-button:hover {
+    box-shadow: rgba(21, 140, 200, 0.4) 5px 5px, rgba(21, 140, 200, 0.3) 10px 10px, rgba(21, 140, 200, 0.2) 15px 15px;
+    font-size: 1.02rem;
+}
+
+.title-button > .wait-button {
+    color: black;
+    background-color: white;
+}
+
+.wait-button:hover {
+    box-shadow: rgba(255, 255, 255, 0.2) 5px 5px, rgba(255, 255, 255, 0.1) 10px 10px, rgba(255, 255, 255, 0.05) 15px 15px;
+    font-size: 1.02rem;
+}
+
+.title-footer {
+    visibility: hidden;
+
+    grid-area: 3 / 2 / 4 / 3;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+.title-footer > * {
+    flex-basis: 150px;
+    text-align: center;
+}
+
+.title-footer-number {
+    display: block;
+
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 1150px) {
+    .bg-1 {
+        height: 350px;
+    }
+
+    .title-container {
+        margin: 20px;
+        margin-top: 50px ;
+    }
+
+    .title-img > img {
+        height: 275px;
+    }
+
+    .title-text > h1 {
+        font-size: 3rem;
+    }
+
+    .title-text > p {
+        font-size: 1.25rem;
+    }
+
+    .title-button {
+        margin-top: 30px;
+    }
+
+    .title-footer {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 925px) {    
+    .title-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .bg-1 {
+        height: 320px;
+    }
+
+    .title-text > h1 {
+        font-size: 2rem;
+    }
+
+    .title-button > a {
+        width: 200px;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .title-footer {
+        font-size: 0.8rem;
+    }
+
+    .title-footer-number {
+        font-size: 1.5rem;
+    }
+} 
