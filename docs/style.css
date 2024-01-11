@@ -215,7 +215,7 @@ a {
 
 .title-button > a {
     width: 11rem;
-    height: 2.7rem;
+    height: 3rem;
     margin-top: 20px;
 
     display: flex;
@@ -451,5 +451,7 @@ a {
 }
 
 .fullmenu-card > .stock-scoops {
+    position: relative;
+    bottom: 15px;;
     width: 100%;
 }
