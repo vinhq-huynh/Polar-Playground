@@ -10,7 +10,7 @@ a {
 .main-container {
     display: grid;
 
-    grid-template-rows: 5rem 15rem 5rem 45rem 40rem 8rem;
+    grid-template-rows: 5rem 15rem 5rem auto 43rem 8rem;
     grid-template-columns: 100%;
 }
 
@@ -215,7 +215,7 @@ a {
 
 .title-button > a {
     width: 11rem;
-    height: 2.5rem;
+    height: 2.7rem;
     margin-top: 20px;
 
     display: flex;
@@ -294,9 +294,8 @@ a {
     margin: 5%;
     padding: 30px;
 
-    /* background-color: rgba(69, 69, 69, 0.8); */
-    background-color: rgba(86, 86, 86, 0.5);
-    backdrop-filter: blur(5px);
+    background: rgba(1, 103, 105, 1.0);
+    background: radial-gradient(at right bottom, rgba(1, 103, 105, 1.0), rgba(1, 51, 95, 1.0));
     
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -332,7 +331,6 @@ a {
     font-size: 1rem;
     text-decoration: none;
     border-radius: 30px;
-    border: 1px solid black;
     transition: all 0.1s;
 }
 
@@ -365,7 +363,7 @@ a {
 }
 
 .icecream-text {
-    margin: 3% 0;
+    margin: 9% 0 2% 0;
     color: white;
     text-align: center;
     text-shadow: 3px 5px 2px #474747;
@@ -426,9 +424,10 @@ a {
 }
 
 .icecream-card > p {
-    margin: 0 25px;
+    margin: 5px 25px;
     font-size: 1.1rem;
     font-weight: 300;
+    text-align: center;
     line-height: 120%;
 }
 
