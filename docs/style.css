@@ -6,7 +6,7 @@ body {
 .main-container {
     display: grid;
 
-    grid-template-rows: 5rem 15rem 5rem 20rem;
+    grid-template-rows: 5rem 15rem 5rem 46rem 30rem;
     grid-template-columns: 100%;
 }
 
@@ -279,13 +279,13 @@ body {
 }
 
 .showcase-text > h2 {    
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: bolder;
 }
 
 .showcase-text > p {
     line-height: 30px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 
@@ -324,4 +324,115 @@ body {
     backdrop-filter: blur(5px);    
     padding: 15px;
     border-radius: 10px;
+}
+
+/**************************** ICECREAM ****************************/
+a {
+    text-decoration: none !important;
+}
+
+.icecream-container {
+    grid-row: 5;
+    grid-column: 1;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/images/icecream-bg.jpeg);
+    background-size: contain;
+}
+
+.icecream-text {
+    margin: 3% 0;
+    color: white;
+    text-align: center;
+    text-shadow: 3px 5px 2px #474747;
+}
+
+.icecream-text > h2 {
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+.icecream-text > p {
+    font-size: 1.4rem;
+    font-weight: lighter;
+}
+
+.icecream-card-container {
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.icecream-card {
+    height: 100%;
+    width: 43%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+    backdrop-filter: blur(3px);
+
+    /* background-image: linear-gradient(rgba(255, 89, 0, 0.05), rgba(255, 89, 0, 0.1)); */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+
+    transition: all 0.2s;
+}
+
+.icecream-card:hover {
+    transform: scale(1.02);
+    background-color: white;
+    /* margin-bottom: 20px; */
+    /* background-image: linear-gradient(rgba(255, 89, 0, 0.01), rgba(255, 89, 0, 0.2)); */
+    /* -webkit-box-shadow:0px 0px 26px 6px rgba(46,130,255,0.54);
+    -moz-box-shadow: 0px 0px 26px 6px rgba(46,130,255,0.54);
+    box-shadow: 0px 0px 26px 6px rgba(46,130,255,0.54); */
+}
+
+.icecream-card > h3 {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.icecream-card > p {
+    margin: 0 25px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 130%;
+}
+
+.icecream-card > img {
+    width: 90%;
+    margin: auto;
+}
+
+.fullmenu-card {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fullmenu-card > h3 {
+}
+
+.fullmenu-card > p {
+    margin: 0;
+    text-align: center;
+}
+
+.fullmenu-card > .right-arrow {
+    width: 40px;
+    height: 40px;
+}
+
+.fullmenu-card > .stock-scoops {
+    width: 100%;
 }
