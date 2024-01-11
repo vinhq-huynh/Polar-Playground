@@ -12,9 +12,9 @@ window.addEventListener('scroll', () => {
     //     bg1.classList.remove('bg-1-scrolled');
     // }
 
-    if (window.scrollY > 50) {
+    if (window.scrollY > 30) {
         navbar_container.classList.add('nav-bar-scrolled');
-    } else if (window.scrollY <= 50) {
+    } else if (window.scrollY <= 30) {
         navbar_container.classList.remove('nav-bar-scrolled');
     }
 })
