@@ -4,16 +4,10 @@ const navlink_container = document.querySelector('.nav-link-container');
 // Handling click hambuger menu bar
 document.querySelector('.fa-bars').addEventListener('click', () => {
     navbar_container.classList.toggle('nav-bar-dark');
-   navlink_container.classList.toggle('d-none');
+    navlink_container.classList.toggle('d-none');
 });
 
 window.addEventListener('scroll', () => {
-    // if (window.scrollY > 0) {
-    //     bg1.classList.add('bg-1-scrolled');
-    // } else if (window.scrollY <= 0) {
-    //     bg1.classList.remove('bg-1-scrolled');
-    // }
-
     if (window.scrollY > 30) {
         navbar_container.classList.add('nav-bar-scrolled');
         navlink_container.style.top = "3.5rem";

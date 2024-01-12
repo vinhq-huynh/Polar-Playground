@@ -7,11 +7,18 @@ a {
     text-decoration: none !important;
 }
 
-.main-container {
+.home-page-container {
     display: grid;
 
     grid-template-rows: 5rem 15rem 5rem auto 43rem 8rem;
     grid-template-columns: 100%;
+}
+
+.menu-page-container {
+    display: grid;
+
+    grid-template-rows: 5rem ;
+
 }
 
 /**************************** NAV-BAR ****************************/
@@ -454,4 +461,42 @@ a {
     position: relative;
     bottom: 15px;;
     width: 100%;
+}
+
+/******************************************************** MENU ********************************************************/
+.menu-container > h1 {
+    margin: 20px auto;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.menu-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu-buttons > a {
+    width: 35%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-align: center;
+
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.menu-buttons > .menu-buttons-selected {
+    background: rgba(1, 103, 105, 1.0);
+    background: radial-gradient(at left top, rgba(1, 103, 105, 1.0), rgba(1, 51, 95, 1.0));
+
+    border: none;
 }
