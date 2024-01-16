@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
 
 app.get("/menu", (req, res) => {
     // Get all characters names
-    fs.readdir(__dirname + "/public/assets/images/characters", (err, files) => {
+    fs.readdir(path.join(__dirname, "/public/assets/images/characters"), (err, files) => {
         if (err) {
             console.log(err);
         } else {
-            res.render(__dirname + "/public/menu.ejs", { all_characters : files, __dirname : __dirname });
+            res.render(path.join(__dirname, "/public/menu.ejs"), { all_characters : files, __dirname : __dirname });
         }
     })
 })
