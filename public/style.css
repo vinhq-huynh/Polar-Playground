@@ -496,7 +496,7 @@ a {
 
     color: rgb(117, 117, 117);
     background-color: rgb(217, 217, 217);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 300;
 
     border: 1px solid rgb(181, 181, 181);
@@ -542,7 +542,7 @@ a {
 
     color: rgb(117, 117, 117);
     background-color: rgb(217, 217, 217);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 300;
 
     border: 1px solid rgb(181, 181, 181);
@@ -570,9 +570,9 @@ a {
 
 .card-title {
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     margin: 0;
-    padding: 5px;
+    padding: 6px;
 }
 
