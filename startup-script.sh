@@ -9,12 +9,14 @@ sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 apt-get update
 apt-get install -yq ca-certificates git build-essential nodejs npm
 
-# Get the application source code from the Google Cloud Storage bucket.
-gsutil -m cp -r gs://polar-playground-src-bucket/Polar-Playground /
+# Get the application source code from GitHub
+cd /
+git clone https://github.com/vinhq-huynh/Polar-Playground.git
 
 # Install app dependencies.
 cd /Polar-Playground
 npm install
+npm install -g pm2
 
 # Run the app
 npm start

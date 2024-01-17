@@ -2,7 +2,9 @@ import fs from "fs"
 import express from "express";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import { exec } from "child_process";
 
+// Main server
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 80;
@@ -10,7 +12,7 @@ const port = 80;
 app.use(express.static('public'));
 
 app.set("view engine", "ejs");
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + "/views");
 
 app.get("/", (req, res) => {
     res.render("index");
@@ -57,5 +59,29 @@ app.get("/waittime", (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Main server listening on port ${port}`);
 })
+
+// Webhook server
+const webhookApp = express();
+const WEBHOOK_PORT = 8000;
+
+webhookApp.use(express.json());
+
+webhookApp.post('/webhook', (req, res) => {
+
+    exec("bash /Polar-Playground/redeply.sh", (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error during deployment: ${stderr}`);
+          return res.status(500).send('Deployment failed');
+        }    
+        
+        console.log(`Deployment successful: ${stdout}`);
+        res.status(200).send('Webhook received successfully');
+    });
+
+});
+
+webhookApp.listen(WEBHOOK_PORT, () => {
+  console.log(`Webhook server listening on port ${WEBHOOK_PORT}`);
+});
