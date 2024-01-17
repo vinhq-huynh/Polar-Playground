@@ -1,0 +1,127 @@
+:root {
+    --nav-bar-height: 5rem;
+}
+
+body {
+    font-family: 'Josefin Sans';
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.nav-bar-container {
+    height: var(--nav-bar-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 50;
+}
+
+.menu-nav {
+    background-color: black;
+}
+
+.nav-bar {
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar-dark {
+    background-color: black;
+}
+
+.nav-bar-scrolled {
+    background-color: black;
+    height: calc(0.75 * var(--nav-bar-height));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.nav-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    height: 80%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.nav-links {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all 0.3s;
+}
+
+.nav-link {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: black;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.active-page {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 650px) {
+    .fa-bars {
+        display: none;
+    }
+
+    .nav-links {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .nav-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    
+        color: white;
+        font-size: 1.1rem;
+        font-weight: lighter;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .active-page {
+        border-bottom: 1px solid white;
+    }
+}

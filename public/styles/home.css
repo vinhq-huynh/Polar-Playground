@@ -1,153 +1,19 @@
-body {
-    font-family: 'Josefin Sans';
-}
-
-body.home {
+.main-container {
     background-color: rgb(47, 47, 47);
-}
-
-body.menu {
-    background-color: rgb(228, 228, 228);
-}
-
-a {
-    text-decoration: none !important;
-}
-
-.home-page-container {
+    
     display: grid;
-
     grid-template-rows: 5rem 15rem 5rem auto 43rem 8rem;
     grid-template-columns: 100%;
 }
 
-.menu-page-container {
-    display: grid;
-
-    grid-template-rows: 5rem ;
-
-}
-
-/**************************** NAV-BAR ****************************/
-.nav-bar-container {
-    height: 100%;
-    position: sticky;
-    top: 0;
-
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
-
-    grid-row: 1;
-    grid-column: 1;
-    z-index: 50;
-}
-
-.menu-nav {
-    background-color: black;
-}
-
-.nav-bar {
-    height: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-left: 5%;
-    padding-right: 5%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-bar-dark {
-    background-color: black;
-}
-
-.nav-bar-scrolled {
-    background-color: black;
-    height: 75%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
-.nav-logo {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.nav-logo-img {
-    height: 80%;
-    margin: auto;
-    border-radius: 50%;
-}
-
-.nav-link-container {
-    position: absolute;
-    top: 5rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-    transition: all 0.3s;
-}
-
-.nav-link {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: black;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: lighter;
-}
-
-.nav-link:hover {
-    color: white;
-}
-
-.active-page {
+a[href="/"] {
     font-weight: bold;
-}
-
-@media screen and (min-width: 650px) {
-    .fa-bars {
-        display: none;
-    }
-
-    .nav-link-container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-    
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    
-    .nav-link {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-    
-        color: white;
-        font-size: 1.1rem;
-        font-weight: lighter;
-    }
-
-    .nav-link:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    .active-page {
-        border-bottom: 1px solid white;
-    }
 }
 
 /**************************** BG-1 ****************************/
 .bg-1 {
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/interior.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/images/interior.jpeg);
     background-size: cover;
     background-position: top right;
 
@@ -157,7 +23,7 @@ a {
 
 @media screen and (min-width: 925px) {
     .bg-1 {
-        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/images/interior.jpeg);
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/interior.jpeg);
         background-attachment: fixed;
     }
 }
@@ -376,7 +242,7 @@ a {
     grid-row: 5;
     grid-column: 1;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/images/icecream-bg.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/images/icecream-bg.jpeg);
     background-size: contain;
 }
 
@@ -473,106 +339,3 @@ a {
     bottom: 15px;;
     width: 100%;
 }
-
-/******************************************************** MENU ********************************************************/
-.menu-container > h1 {
-    margin: 20px auto auto auto;
-    color: black;
-    font-size: 3rem;
-    text-align: center;
-}
-
-.menu-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.menu-buttons > a {
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: rgb(117, 117, 117);
-    background-color: rgb(217, 217, 217);
-    font-size: 1.3rem;
-    font-weight: 300;
-
-    border: 1px solid rgb(181, 181, 181);
-    border-radius: 30px;
-}
-
-.menu-button-selected {
-    color: white !important;
-    background: rgba(1, 143, 146, 1.0);
-    background: radial-gradient(at left top, rgba(1, 143, 146, 1.0), rgba(5, 68, 124, 1.0));
-    border: none !important;
-    font-weight: 400;
-}
-
-.cottoncandy-button {
-    width: 160px;
-    position: relative;
-    left: 20px;
-    z-index: 1;
-}
-
-.icecream-button {
-    width: 180px;
-    position: relative;
-    right: 20px;
-
-    padding-left: 20px;
-}
-
-.sub-menu-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.sub-menu-buttons > a {
-    height: 40px;
-    padding: 10px 20px;
-    margin: 10px 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: rgb(117, 117, 117);
-    background-color: rgb(217, 217, 217);
-    font-size: 1.3rem;
-    font-weight: 300;
-
-    border: 1px solid rgb(181, 181, 181);
-    border-radius: 30px;
-}
-
-.characters-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.characters-container > .card {
-    width: 45%;
-    margin: 2%;
-
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
-}
-
-.card-body {
-    padding: 0;
-}
-
-.card-title {
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-align: center;
-    margin: 0;
-    padding: 6px;
-}
-

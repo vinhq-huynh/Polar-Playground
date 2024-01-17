@@ -1,0 +1,26 @@
+<%- include("partials/header", {pageTitle: "Menu", cssFilename: "menu.css"}) %>
+<div class="main-container">
+    <h1>Our Menu</h1>
+
+    <div class="menu-buttons">
+        <a class="cottoncandy-button menu-button-selected" href="#">Cotton Candy</a>
+        <a class="icecream-button" href="#">Ice Cream</a>
+    </div>
+
+    <div class="sub-menu-buttons">
+        <a class="characters-button menu-button-selected" href="#">Characters</a>
+        <a class="tubs-button" href="#">Tubs</a>
+        <a class="flavors-button" href="#">Flavors</a>
+    </div>
+
+    <div class="characters-container">
+        <% for (var i = 0; i < all_characters.length; i++) { %><% var src = "/assets/images/characters/" + all_characters[i]; %>
+            <div class="card">
+                <img src=<%= src %> alt="character-img" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><%= all_characters[i].substring(0, all_characters[i].lastIndexOf('.')) || all_characters[i] %></h5>
+                </div>
+            </div><% } %>
+    </div>
+</div>
+<%- include("partials/footer", {jsFilename: ""}) %>
