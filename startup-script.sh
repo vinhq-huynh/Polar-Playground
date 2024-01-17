@@ -16,11 +16,11 @@ ln -s /opt/nodejs/bin/node /usr/bin/node
 ln -s /opt/nodejs/bin/npm /usr/bin/npm
 
 # Get the application source code from the Google Cloud Storage bucket.
-mkdir /fancy-store
-gsutil -m cp -r gs://polar-playground-src-bucket
+mkdir /Polar-Playground
+gsutil -m cp -r gs://polar-playground-src-bucket/Polar-Playground
 
 # Install app dependencies.
-cd /Polar-playground
+cd /Polar-Playground
 npm install
 
 # Create a nodeapp user. The application will run as this user.
