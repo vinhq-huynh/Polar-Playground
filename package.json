@@ -8,6 +8,7 @@
     "ext": "js,json,ejs,html,css"
   },
   "scripts": {
+    "start": "pm2 start app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vinh Huynh",
