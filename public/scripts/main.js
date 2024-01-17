@@ -17,3 +17,4 @@ window.addEventListener('scroll', () => {
         nav_links.style.top = "5rem";
     }
 })
+

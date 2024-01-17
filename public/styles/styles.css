@@ -15,17 +15,10 @@ a {
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 50;
 
     background-color: rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
-
-    grid-row: 1;
-    grid-column: 1;
-    z-index: 50;
-}
-
-.menu-nav {
-    background-color: black;
 }
 
 .nav-bar {
@@ -87,10 +80,6 @@ a {
     color: white;
 }
 
-.active-page {
-    font-weight: bold;
-}
-
 @media screen and (min-width: 650px) {
     .fa-bars {
         display: none;
@@ -119,9 +108,5 @@ a {
 
     .nav-link:hover {
         background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    .active-page {
-        border-bottom: 1px solid white;
     }
 }
