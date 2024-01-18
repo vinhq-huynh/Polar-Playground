@@ -57,5 +57,3 @@ app.get("/waittime", (req, res) => {
 })
 
 app.listen();
-
-console.log("Server listening");
