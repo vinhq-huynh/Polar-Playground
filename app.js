@@ -9,6 +9,7 @@ const app = express();
 
 app.use(express.static('public'));
 
+app.set('trust proxy', true);
 app.set("view engine", "ejs");
 app.set('views', __dirname + "/views");
 
@@ -56,4 +57,7 @@ app.get("/waittime", (req, res) => {
     res.render("waittime", { phrases : waittime_phrases, waittime : waittime });
 })
 
-app.listen();
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}...`);
+});
