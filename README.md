@@ -1,1 +1,0 @@
-# Polar Playground website
