@@ -7,7 +7,7 @@ import { exec } from "child_process";
 // Main server
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 80;
+const port = 443;
 
 app.use(express.static('public'));
 
