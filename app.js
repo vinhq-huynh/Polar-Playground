@@ -9,7 +9,6 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.set('trust proxy', true);
 app.set("view engine", "ejs");
 app.set('views', __dirname + "/views");
 
