@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Install Ops Agent. The monitor will automatically pick up logs sent to
-# syslog.
+# Install Ops Agent. The monitor will automatically pick up logs sent to syslog.
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
 sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 

@@ -2,6 +2,7 @@ import fs from "fs"
 import express from "express";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import Firestore from "@google-cloud/firestore"
 
 // Main server
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -16,15 +17,13 @@ app.get("/", (req, res) => {
     res.render("index");
 })
 
-app.get("/menu", (req, res) => {
-    // Get all characters names
-    fs.readdir(path.join(__dirname, "public", "assets", "images", "characters"), (err, files) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("menu", { all_characters : files, __dirname : __dirname });
-        }
-    })
+const db = new Firestore({
+    projectId: 'polar-playground',
+});
+app.get("/menu", async (req, res) => {
+    // Get all characters from Firestore
+    const snapshot = await db.collection('characters').get();
+    res.render("menu", { all_characters : snapshot, __dirname : __dirname });
 })
 
 app.get("/hours", (req, res) => {

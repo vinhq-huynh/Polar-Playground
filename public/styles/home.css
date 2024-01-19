@@ -13,7 +13,7 @@ a[href="/"] {
 /**************************** BG-1 ****************************/
 .bg-1 {
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/images/interior.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/interior.jpeg);
     background-size: cover;
     background-position: top right;
 
@@ -242,7 +242,7 @@ a[href="/"] {
     grid-row: 5;
     grid-column: 1;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/images/icecream-bg.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/icecream-bg.jpeg);
     background-size: contain;
 }
 
