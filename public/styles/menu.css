@@ -7,6 +7,11 @@ a[href="/menu"] {
     font-weight: bold;
 }
 
+.nav-bar {
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
 h1 {
     padding-top: 20px;
     color: black;
@@ -20,7 +25,7 @@ h1 {
 }
 
 .menu-buttons > a {
-    height: 40px;
+    height: 50px;
 
     display: flex;
     align-items: center;
@@ -44,14 +49,14 @@ h1 {
 }
 
 .cottoncandy-button {
-    width: 160px;
+    width: 180px;
     position: relative;
     left: 20px;
     z-index: 1;
 }
 
 .icecream-button {
-    width: 180px;
+    width: 200px;
     position: relative;
     right: 20px;
 

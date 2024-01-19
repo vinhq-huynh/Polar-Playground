@@ -23,7 +23,7 @@ a[href="/"] {
 
 @media screen and (min-width: 925px) {
     .bg-1 {
-        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/interior.jpeg);
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/interior.jpeg);
         background-attachment: fixed;
     }
 }

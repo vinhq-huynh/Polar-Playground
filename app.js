@@ -62,3 +62,17 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}...`);
 });
+
+// const characters = [];
+    
+// characters.forEach(async (char) => {
+//     const data = {
+//         name: char,
+//         flavors: "",
+//         description: "",
+//         published: true,
+//         seasonal: false
+//     };
+      
+//     const res = await db.collection("characters").doc(char).set(data);
+// })
