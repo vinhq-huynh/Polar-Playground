@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     function activateModal(card) {
-        const characterName = card.querySelector(".card-title").innerHTML;
+        const characterId = card.getAttribute("id");
+        const characterName = card.querySelector(".card-title");
         const imgSrc = card.querySelector("img").getAttribute("src");
         const characterDescription = card.querySelector(".character-description");
         const characterFlavors = card.querySelector(".character-flavors");
 
-        characterModal.querySelector(".modal-title").innerHTML = characterName;
+        characterModal.querySelector(".modal-title").innerHTML = characterName.innerHTML;
         characterModal.querySelector(".modal-img").setAttribute("src", imgSrc);
         characterModal.querySelector(".modal-description").innerHTML = characterDescription.innerHTML;
         characterModal.querySelector(".modal-footer-p").innerHTML = "Flavors: " + characterFlavors.innerHTML;

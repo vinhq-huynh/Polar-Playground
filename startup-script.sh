@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# For GCP Compute Engine startups. Whenever an instance is created by Managed Instance Group's autoscaling, it runs this script.
 # Install Ops Agent. The monitor will automatically pick up logs sent to syslog.
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
 sudo bash add-google-cloud-ops-agent-repo.sh --also-install

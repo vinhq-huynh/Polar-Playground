@@ -14,7 +14,7 @@
     </div>
 
     <div class="characters-container">
-        <% all_characters.forEach((character) => { %>
+        <% allCharacters.forEach((character) => { %>
             <% var src = "/images/characters/" + character.id + ".jpg"; %>
             <a id="<%= character.id %>" class="card character-card" style="cursor: pointer;">
                 <img src=<%= src %> alt="character-img" class="card-img-top">
