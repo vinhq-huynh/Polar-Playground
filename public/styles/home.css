@@ -1,3 +1,15 @@
+.nav-bar-container {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar-scrolled {
+    background-color: black;
+}
+
+.nav-bar-dark {
+    background-color: black;
+}
+
 .main-container {
     background-color: rgb(47, 47, 47);
     
@@ -9,6 +21,7 @@
 a[href="/"] {
     font-weight: bold;
 }
+
 
 /**************************** BG-1 ****************************/
 .bg-1 {
