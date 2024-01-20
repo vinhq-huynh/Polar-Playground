@@ -130,7 +130,9 @@ a[href="/"] {
 }
 
 .title-button > .menu-button {
-    background-image: linear-gradient(144deg,#2600ff, #2679ff 50%,#00b4eb);
+    background: radial-gradient(at left top, rgba(1, 143, 146, 1.0), rgba(5, 68, 124, 1.0));
+
+    /* background-image: linear-gradient(144deg,#2600ff, #2679ff 50%,#00b4eb); */
 }
 
 .menu-button:hover {
