@@ -1,0 +1,71 @@
+<%- include("partials/header", {pageTitle: "Cotton Candy Menu", cssFilename: "menu.css"}) %>
+<div class="main-container">
+    <h1>Our Menu</h1>
+
+    <div class="menu-buttons">
+        <a class="cottoncandy-button" id="menu-button-selected" href="/menu/cottoncandy">Cotton Candy</a>
+        <a class="icecream-button" href="/menu/icecream">Ice Cream</a>
+    </div>
+
+    <div class="sub-menu-buttons">
+        <a class="characters-button" id="sub-menu-button-selected" href="#">Characters</a>
+        <a class="tubs-button" href="#">Tubs</a>
+        <a class="flavors-button" href="#">Flavors</a>
+    </div>
+
+    <!-- Characters -->
+    <div class="card-container character-container">
+        <% allCharacters.forEach((character) => { %>
+            <% var src = "/images/characters/" + character.id + ".jpg"; %>
+            <a class="card character-card" style="cursor: pointer;">
+                <img src=<%= src %> alt="character-img" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><%= character.data().name %></h5>
+                    <p class="card-description d-none"><%= character.data().description %></p>
+                    <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                </div>
+            </a>
+        <% }) %>
+    </div>
+
+    <!-- Tubs -->
+    <div class="card-container tub-container d-none">
+        <h5 class="container-description">Tubs last much longer than characters.</h5>
+        <% allFlavors.forEach((flavor) => { %>
+            <% if (flavor.tubAvailable) { %>
+                <% var src = "/images/tubs/" + flavor.id + ".jpg"; %>
+                <a class="card character-card" style="cursor: pointer;">
+                    <img src=<%= src %> alt="tub-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= flavor.name %></h5>
+                    </div>
+                </a>
+            <% } %>
+        <% }) %>
+    </div>
+
+    <!-- Flavors -->
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="characterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img class="modal-img img-fluid" src="" alt="">
+                <p class="modal-description"></p>
+            </div>
+            <div class="modal-footer">
+                <p class="modal-footer-p"></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer", {jsFilename: "menu.js"}) %>

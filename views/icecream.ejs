@@ -1,0 +1,17 @@
+<%- include("partials/header", {pageTitle: "Ice Cream Menu", cssFilename: "menu.css"}) %>
+<div class="main-container">
+    <h1>Our Menu</h1>
+
+    <div class="menu-buttons">
+        <a class="cottoncandy-button" href="/menu/cottoncandy">Cotton Candy</a>
+        <a class="icecream-button" id="menu-button-selected" href="/menu/icecream">Ice Cream</a>
+    </div>
+
+    <div class="sub-menu-buttons">
+        <a class="characters-button" id="sub-menu-button-selected" href="#">Milkshake</a>
+        <a class="tubs-button" href="#">Softserver</a>
+        <a class="flavors-button" href="#">Polar Bar</a>
+        <a class="flavors-button" href="#">Float</a>
+        <a class="flavors-button" href="#">Freeze</a>
+    </div>
+<%- include("partials/footer", {jsFilename: "menu.js"}) %>

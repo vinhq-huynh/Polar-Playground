@@ -14,18 +14,44 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// Index route
 app.get("/", (req, res) => {
     res.render("index");
 })
 
+// Menu route
+app.get("/menu", (req, res) => {
+    res.send("Our menu");
+})
+
+// Cotton candy menu route
 // Initialize connection to GCP Firestore
 const db = new Firestore({
     projectId: 'polar-playground',
 });
-app.get("/menu", async (req, res) => {
+app.get("/menu/cottoncandy", async (req, res) => {
     // Get all published characters from Firestore
-    const charactersCollection = await db.collection('characters').where("published", "==", true).get();
-    res.render("menu", { allCharacters : charactersCollection, __dirname : __dirname });
+    const allCharacters = await db.collection('characters').where("published", "==", true).get();
+    const allFlavors = [
+        {id: "red", name: "Cherry", tubAvailable: true},
+        {id: "yellow", name: "Lemon", tubAvailable: true},
+        {id: "green", name: "Apple", tubAvailable: true},
+        {id: "blue", name: "Raspberry", tubAvailable: true},
+        {id: "purple", name: "Grape", tubAvailable: true},
+        {id: "white", name: "Vanilla", tubAvailable: true},
+        {id: "pink", name: "Passionfruit", tubAvailable: true},
+        {id: "dark_pink", name: "Strawberry", tubAvailable: false},
+        {id: "orange", name: "Orange", tubAvailable: false},
+        {id: "light_blue", name: "Blueberry", tubAvailable: false},
+        {id: "peach", name: "Peach", tubAvailable: false},
+        {id: "brown", name: "Mixture", tubAvailable: false},
+        {id: "grey", name: "Mixture", tubAvailable: false},
+    ]
+    res.render("cottoncandy", { allCharacters, allFlavors, __dirname });
+})
+
+app.get("/menu/icecream", (req, res) => {
+    res.render("icecream");
 })
 
 app.get("/hours", (req, res) => {
@@ -36,16 +62,17 @@ app.get("/about", (req, res) => {
     res.render("about");
 })
 
-const waittimeDescriptions = [
-    "we are not busy at the moment.",
-    "we are a little busy right now.",
-    "we are quite busy right now.",
-    "we are really busy at the moment.",
-    "we are experiencing the highest demands right now.",
-    "we are closed for today.",
-    "we are closed today."
-]
+
 app.get("/waittime", (req, res) => {
+    const waittimeDescriptions = [
+        "we are not busy at the moment.",
+        "we are a little busy right now.",
+        "we are quite busy right now.",
+        "we are really busy at the moment.",
+        "we are experiencing the highest demands right now.",
+        "we are closed for today.",
+        "we are closed today."
+    ];
     // Get waittime from server
     
     // Build waittime object
@@ -54,7 +81,7 @@ app.get("/waittime", (req, res) => {
         minute: 0,
         updatedTime: 0
     }
-    res.render("waittime", { waittimeDescriptions : waittimeDescriptions, waittimeObj : waittimeObj });
+    res.render("waittime", { waittimeDescriptions, waittimeObj });
 })
 
 // This app is deployed on GCP App Engine, so it uses the specifed "PORT". Use 8080 otherwise.
