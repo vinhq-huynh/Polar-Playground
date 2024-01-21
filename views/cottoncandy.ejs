@@ -1,58 +1,64 @@
 <%- include("partials/header", {pageTitle: "Cotton Candy Menu", cssFilename: "menu.css"}) %>
 <div class="main-container">
 
-    <div class="menu-header">
-        <h1>Our Menu</h1>
+    <h1>Our Menu</h1>
 
-        <div class="menu-switch">
-            <a class="bottom" href="/menu/icecream"><span>Cotton Candy</span><span>Ice Cream</span></a>
-            <a class="top" href="#" style="right: 50%">Cotton Candy</a>
-        </div>
-
-        <div class="sub-menu-buttons">
-            <a class="characters-button" id="sub-menu-button-selected" href="#">Characters</a>
-            <a class="tubs-button" href="#">Tubs</a>
-            <a class="flavors-button" href="#">Flavors</a>
-        </div>
-
-    </div>
-    
-
-    <!-- Characters -->
-    <div class="card-container character-container">
-        <% allCharacters.forEach((character) => { %>
-            <% var src = "/images/characters/" + character.id + ".jpg"; %>
-            <a class="card character-card" style="cursor: pointer;">
-                <img src=<%= src %> alt="character-img" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title"><%= character.data().name %></h5>
-                    <p class="card-description d-none"><%= character.data().description %></p>
-                    <p class="card-footer-p d-none"><%= character.data().flavors %></p>
-                </div>
-            </a>
-        <% }) %>
+    <div class="menu-switch">
+        <a class="bottom" href="/menu/icecream"><span>Cotton Candy</span><span>Ice Cream</span></a>
+        <a class="top" href="#" style="right: 50%">Cotton Candy</a>
     </div>
 
-    <!-- Tubs -->
-    <div class="card-container tub-container d-none">
-        <h5 class="container-description">Tubs last much longer than characters.</h5>
-        <% allFlavors.forEach((flavor) => { %>
-            <% if (flavor.tubAvailable) { %>
-                <% var src = "/images/tubs/" + flavor.id + ".jpg"; %>
+    <div id="cottoncandy-options" class="sub-menu-buttons">
+        <a class="characters-button" href="#character-container">Characters</a>
+        <a class="tubs-button" href="#tub-container">Tubs</a>
+        <a class="flavors-button" href="#flavor-container">Flavors</a>
+    </div>
+
+    <div class="menu-body" data-bs-spy="scroll" data-bs-target="cottoncandy-options" data-bs-root-margin="-20px 0px 0px 0px" data-bs-smooth-scroll="true">
+        <!-- Characters -->
+        <div id="character-container" class="card-container">
+            <% allCharacters.forEach((character) => { %>
+                <% var src = "/images/characters/" + character.id + ".jpg"; %>
                 <a class="card character-card" style="cursor: pointer;">
-                    <img src=<%= src %> alt="tub-img" class="card-img-top">
+                    <img src=<%= src %> alt="character-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.data().name %></h5>
+                        <p class="card-description d-none"><%= character.data().description %></p>
+                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+
+        <!-- Tubs -->
+        <div id="tub-container" class="card-container">
+            <h5 class="container-description">Tubs last much longer than characters.</h5>
+            <% allFlavors.forEach((flavor) => { %>
+                <% if (flavor.tubAvailable) { %>
+                    <% var src = "/images/tubs/" + flavor.id + ".jpg"; %>
+                    <a class="card" style="cursor: pointer;">
+                        <img src=<%= src %> alt="tub-img" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= flavor.name %></h5>
+                        </div>
+                    </a>
+                <% } %>
+            <% }) %>
+        </div>
+
+        <!-- Flavors -->
+        <div id="flavor-container" class="card-container">
+            <h5 class="container-description">All of our flavors.</h5>
+            <% allFlavors.forEach((flavor) => { %>
+                <a class="card" style="cursor: pointer;">
+                    <img alt="tub-img" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title"><%= flavor.name %></h5>
                     </div>
                 </a>
-            <% } %>
-        <% }) %>
+            <% }) %>
+        </div>
     </div>
-
-    <!-- Flavors -->
-
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="characterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

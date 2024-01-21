@@ -1,27 +1,28 @@
 .main-container {
     background-color: rgb(225, 225, 225);
-    padding-top: var(--nav-bar-height);
+    margin-top: var(--nav-bar-height);
 }
 
 a[href="/menu"] {
     font-weight: bold;
 }
 
-.menu-header {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
+/* .menu-body {
+    height: 100vh;
+    overflow-y: scroll;
+} */
 
 h1 {
     padding-top: 20px;
     color: black;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     text-align: center;
 }
 
 .menu-switch {
     display: flex;
     justify-content: center;
-    height: 45px;
+    height: 50px;
     font-size: 1.2rem;
 }
 
@@ -41,7 +42,7 @@ h1 {
 
 .menu-switch > .top {
     width: 175px;
-    height: 45px;
+    height: 50px;
     position: absolute;
 
     display: flex;
@@ -56,25 +57,21 @@ h1 {
 }
 
 .sub-menu-buttons {
+    position: sticky;
+    top: 55px;
+
     display: flex;
     justify-content: center;
     overflow: scroll;
+
+    /* background-color: rgba(241, 241, 241, 0.4); */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    z-index: 10;
 }
 
 .sub-menu-buttons::-webkit-scrollbar {
     display: none;
-}
-
-#sub-menu-button-selected {
-    color: rgb(67, 67, 67);
-    /* -webkit-box-shadow:0px 0px 8px 0px rgb(0, 154, 162);
-    -moz-box-shadow: 0px 0px 8px 0px rgb(0, 154, 162); */
-    box-shadow: 0px 0px 8px 0px rgb(0, 154, 162);
-    /* box-shadow: 0px 0px 8px 0px #2679ff; */
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 154, 162, 0.4);
-    /* border: 1px solid #2679ff; */
-    font-weight: 400;
 }
 
 .sub-menu-buttons > a {
@@ -92,8 +89,19 @@ h1 {
     font-weight: 300;
     white-space: nowrap;
 
-    border: 1px solid rgba(181, 181, 181, 0.4);
+    border: 1px solid rgba(181, 181, 181, 0.619);
     border-radius: 30px;
+}
+
+.sub-menu-buttons > .active {
+    color: rgb(67, 67, 67);
+    /* -webkit-box-shadow:0px 0px 8px 0px rgb(0, 154, 162);
+    -moz-box-shadow: 0px 0px 8px 0px rgb(0, 154, 162); */
+    box-shadow: 0px 0px 8px 0px rgb(0, 154, 162);
+    /* box-shadow: 0px 0px 8px 0px #2679ff; */
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 154, 162, 0.4);
+    font-weight: 400;
 }
 
 .card-container {

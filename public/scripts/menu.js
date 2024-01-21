@@ -37,18 +37,4 @@ document.addEventListener("DOMContentLoaded", () => {
         characterModal.querySelector(".modal-footer-p").innerHTML = "Flavors: " + characterFlavors.innerHTML;
         bootstrapModal.show();
     }
-
-    // Menu button handler
-    document.querySelectorAll(".sub-menu-buttons > a").forEach((button) => {
-        button.addEventListener("click", () => {
-            showTab(button.getAttribute("class"));
-        })
-    })
-
-    function showTab(buttonName) {
-
-        document.querySelector(".character-container").classList.add("d-none");
-        document.querySelector(".tub-container").classList.remove("d-none");
-    }
-
 });
