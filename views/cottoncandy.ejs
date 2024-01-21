@@ -1,17 +1,22 @@
 <%- include("partials/header", {pageTitle: "Cotton Candy Menu", cssFilename: "menu.css"}) %>
 <div class="main-container">
-    <h1>Our Menu</h1>
 
-    <div class="menu-buttons">
-        <a class="cottoncandy-button" id="menu-button-selected" href="/menu/cottoncandy">Cotton Candy</a>
-        <a class="icecream-button" href="/menu/icecream">Ice Cream</a>
-    </div>
+    <div class="menu-header">
+        <h1>Our Menu</h1>
 
-    <div class="sub-menu-buttons">
-        <a class="characters-button" id="sub-menu-button-selected" href="#">Characters</a>
-        <a class="tubs-button" href="#">Tubs</a>
-        <a class="flavors-button" href="#">Flavors</a>
+        <div class="menu-switch" style="height: 50px;">
+            <a class="menu-switch-bottom" href="/menu/icecream" style="width: 350px; display: flex; justify-content: space-evenly;"><span>Cotton Candy</span><span>Ice Cream</span></a>
+            <a class="menu-switch-top" id="menu-button-selected" href="#" style="height: 50px; width: 175px; position: absolute; right: 50%;">Cotton Candy</a>
+        </div>
+
+        <div class="sub-menu-buttons">
+            <a class="characters-button" id="sub-menu-button-selected" href="#">Characters</a>
+            <a class="tubs-button" href="#">Tubs</a>
+            <a class="flavors-button" href="#">Flavors</a>
+        </div>
+
     </div>
+    
 
     <!-- Characters -->
     <div class="card-container character-container">

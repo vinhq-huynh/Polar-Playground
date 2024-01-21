@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {    
+    // Sub menu buttons overflow check
+    subMenuButtonOverflowCheck();
+    
+    window.addEventListener("resize", subMenuButtonOverflowCheck);
+
+    function subMenuButtonOverflowCheck() {
+        const subMenuButtons = document.querySelector(".sub-menu-buttons");
+        if (subMenuButtons.scrollWidth > subMenuButtons.clientWidth) {
+            subMenuButtons.style.justifyContent = "flex-start";
+            subMenuButtons.style.paddingLeft = "20px";
+        }
+        else {
+            subMenuButtons.style.justifyContent = "center";
+        }
+    }
 
     // Character modal handler
     const characterModal = document.querySelector("#characterModal");
@@ -31,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     function showTab(buttonName) {
-        
+
         document.querySelector(".character-container").classList.add("d-none");
         document.querySelector(".tub-container").classList.remove("d-none");
     }
