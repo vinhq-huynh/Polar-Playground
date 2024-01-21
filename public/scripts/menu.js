@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const subMenuButtons = document.querySelector(".sub-menu-buttons");
         if (subMenuButtons.scrollWidth > subMenuButtons.clientWidth) {
             subMenuButtons.style.justifyContent = "flex-start";
-            subMenuButtons.style.paddingLeft = "20px";
+            subMenuButtons.style.paddingLeft = "10px";
         }
         else {
             subMenuButtons.style.justifyContent = "center";
