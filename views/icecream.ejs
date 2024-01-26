@@ -7,11 +7,83 @@
         <a class="top" href="#" style="left: 50%">Ice Cream</a>
     </div>
 
-    <div class="sub-menu-buttons">
-        <a class="characters-button" id="sub-menu-button-selected" href="#">Milkshake</a>
-        <a class="tubs-button" href="#">Softserver</a>
-        <a class="flavors-button" href="#">Polar Bar</a>
-        <a class="flavors-button" href="#">Float</a>
-        <a class="flavors-button" href="#">Freeze</a>
+    <div id="icecream-options" class="sub-menu-buttons">
+        <a class="characters-button" href="#milkshake-container">Milkshake</a>
+        <a class="tubs-button" href="#softserve-container">Softserver</a>
+        <a class="flavors-button" href="#polarbar-container">Polar Bar</a>
+        <a class="flavors-button" href="#float-container">Float</a>
+        <a class="freeze-button" href="#freeze-container">Freeze</a>
+    </div>
+
+    <div class="menu-body" data-bs-spy="scroll" data-bs-target="cottoncandy-options">
+        <div id="milkshake-container" class="card-container">
+            <% allCharacters.forEach((character) => { %>
+                <% var src = "/images/characters/" + character.id + ".jpg"; %>
+                <a class="card character-card" style="cursor: pointer;">
+                    <img src=<%= src %> alt="character-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.data().name %></h5>
+                        <p class="card-description d-none"><%= character.data().description %></p>
+                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+
+        <div id="softserve-container" class="card-container">
+            <% allCharacters.forEach((character) => { %>
+                <% var src = "/images/characters/" + character.id + ".jpg"; %>
+                <a class="card character-card" style="cursor: pointer;">
+                    <img src=<%= src %> alt="character-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.data().name %></h5>
+                        <p class="card-description d-none"><%= character.data().description %></p>
+                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+
+        <div id="polarbar-container" class="card-container">
+            <% allCharacters.forEach((character) => { %>
+                <% var src = "/images/characters/" + character.id + ".jpg"; %>
+                <a class="card character-card" style="cursor: pointer;">
+                    <img src=<%= src %> alt="character-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.data().name %></h5>
+                        <p class="card-description d-none"><%= character.data().description %></p>
+                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+
+        <div id="float-container" class="card-container">
+            <% allCharacters.forEach((character) => { %>
+                <% var src = "/images/characters/" + character.id + ".jpg"; %>
+                <a class="card character-card" style="cursor: pointer;">
+                    <img src=<%= src %> alt="character-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.data().name %></h5>
+                        <p class="card-description d-none"><%= character.data().description %></p>
+                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+
+        <div id="freeze-container" class="card-container">
+            <% allCharacters.forEach((character) => { %>
+                <% var src = "/images/characters/" + character.id + ".jpg"; %>
+                <a class="card character-card" style="cursor: pointer;">
+                    <img src=<%= src %> alt="character-img" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.data().name %></h5>
+                        <p class="card-description d-none"><%= character.data().description %></p>
+                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
     </div>
 <%- include("partials/footer", {jsFilename: "menu.js"}) %>

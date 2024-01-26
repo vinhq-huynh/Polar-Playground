@@ -1,3 +1,21 @@
+:root {
+    --red: rgb(197, 0, 0);
+    --yellow: rgb(253, 206, 51);
+    --green: rgb(0, 162, 27);
+    --blue: rgb(0, 35, 210);
+    --purple: rgb(122, 0, 163);
+    --white: rgb(255, 255, 255);
+    --pink: rgb(240, 174, 174);
+    --dark_pink: rgb(231, 106, 106);
+    --light_blue: rgb(139, 224, 228);
+    --peach: rgb(196, 203, 178);
+    --brown: rgb(119, 100, 100);
+    --grey: rgb(97, 97, 97);
+    --orange: rgb(236, 121, 64);
+
+    --card-border-radius: 5px;
+}
+
 .main-container {
     background-color: rgb(225, 225, 225);
     margin-top: var(--nav-bar-height);
@@ -6,11 +24,6 @@
 a[href="/menu"] {
     font-weight: bold;
 }
-
-/* .menu-body {
-    height: 100vh;
-    overflow-y: scroll;
-} */
 
 h1 {
     padding-top: 20px;
@@ -54,20 +67,20 @@ h1 {
     color: white;
     font-weight: 400;
     border-radius: 15px;
+    z-index: 2;
 }
 
 .sub-menu-buttons {
     position: sticky;
-    top: 55px;
+    top: calc(var(--nav-bar-height) * 0.7);
 
     display: flex;
     justify-content: center;
     overflow: scroll;
 
-    /* background-color: rgba(241, 241, 241, 0.4); */
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-    z-index: 10;
+    background-color: rgb(225, 225, 225);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 10px 8px 0px;
+    z-index: 1;
 }
 
 .sub-menu-buttons::-webkit-scrollbar {
@@ -77,7 +90,7 @@ h1 {
 .sub-menu-buttons > a {
     height: 40px;
     padding: 20px;
-    margin: 15px 5px;
+    margin: 12px 5px;
 
     display: flex;
     align-items: center;
@@ -95,16 +108,20 @@ h1 {
 
 .sub-menu-buttons > .active {
     color: rgb(67, 67, 67);
-    /* -webkit-box-shadow:0px 0px 8px 0px rgb(0, 154, 162);
-    -moz-box-shadow: 0px 0px 8px 0px rgb(0, 154, 162); */
+    -webkit-box-shadow:0px 0px 8px 0px rgb(0, 154, 162);
+    -moz-box-shadow: 0px 0px 8px 0px rgb(0, 154, 162);
     box-shadow: 0px 0px 8px 0px rgb(0, 154, 162);
-    /* box-shadow: 0px 0px 8px 0px #2679ff; */
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(0, 154, 162, 0.4);
     font-weight: 400;
 }
 
-.card-container {
+.container-header {
+    text-align: center;
+    margin: 8px auto;
+}
+
+.container-body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -116,6 +133,7 @@ h1 {
     margin: 2%;
 
     border: none;
+    border-radius: var(--card-border-radius);
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
@@ -131,13 +149,36 @@ h1 {
     padding: 6px;
 }
 
+.flavor-color {
+    height: 80px;
+    width: auto;
+
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
+}
+
+#red { background-color: var(--red); }
+#yellow { background-color: var(--yellow); }
+#green { background-color: var(--green); }
+#blue { background-color: var(--blue); }
+#purple { background-color: var(--purple); }
+#white { background-color: var(--white); }
+#pink { background-color: var(--pink); }
+#dark_pink { background-color: var(--dark_pink); }
+#orange { background-color: var(--orange); }
+#light_blue { background-color: var(--light_blue); }
+#peach { background-color: var(--peach); }
+#brown { background-color: var(--brown); }
+#grey { background-color: var(--grey); }
+
 .modal-title {
     font-size: 1.4rem;
 }
 
 .modal-img {
     border-radius: 10px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;}
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
 
 .modal-description {
     font-size: 1.1rem;

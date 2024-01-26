@@ -50,8 +50,10 @@ app.get("/menu/cottoncandy", async (req, res) => {
     res.render("cottoncandy", { allCharacters, allFlavors, __dirname });
 })
 
-app.get("/menu/icecream", (req, res) => {
-    res.render("icecream");
+// Ice cream menu route
+app.get("/menu/icecream", async (req, res) => {
+    const allCharacters = await db.collection('characters').where("seasonal", "==", true).get();
+    res.render("icecream", { allCharacters, __dirname });
 })
 
 app.get("/hours", (req, res) => {
@@ -62,7 +64,7 @@ app.get("/about", (req, res) => {
     res.render("about");
 })
 
-
+// Waittime route
 app.get("/waittime", (req, res) => {
     const waittimeDescriptions = [
         "we are not busy at the moment.",
