@@ -15,75 +15,70 @@
         <a class="freeze-button" href="#freeze-container">Freeze</a>
     </div>
 
-    <div class="menu-body" data-bs-spy="scroll" data-bs-target="cottoncandy-options">
+    <div class="menu-body" data-bs-spy="scroll" data-bs-target="icecream-options">
         <div id="milkshake-container" class="card-container">
-            <% allCharacters.forEach((character) => { %>
-                <% var src = "/images/characters/" + character.id + ".jpg"; %>
-                <a class="card character-card" style="cursor: pointer;">
-                    <img src=<%= src %> alt="character-img" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= character.data().name %></h5>
-                        <p class="card-description d-none"><%= character.data().description %></p>
-                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
-                    </div>
-                </a>
-            <% }) %>
+            <h5 class="container-header"></h5>
+            <div class="container-body">
+                <% allMilkshakes.forEach((milkshake) => { %>
+                    <% var src = "/images/icecream/milkshake/" + milkshake.id + ".jpg"; %>
+                    <a class="card icecream-card" style="cursor: pointer;">
+                        <img src=<%= src %> alt="milkshake-img" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= milkshake.name %></h5>
+                            <p class="card-description d-none"><%= milkshake.description %></p>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
         </div>
 
+
         <div id="softserve-container" class="card-container">
-            <% allCharacters.forEach((character) => { %>
-                <% var src = "/images/characters/" + character.id + ".jpg"; %>
-                <a class="card character-card" style="cursor: pointer;">
-                    <img src=<%= src %> alt="character-img" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= character.data().name %></h5>
-                        <p class="card-description d-none"><%= character.data().description %></p>
-                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
-                    </div>
-                </a>
-            <% }) %>
+            <h5 class="container-header"></h5>
+            <div class="container-body">
+                <% allMilkshakes.forEach((milkshake) => { %>
+                    <% var src = "/images/icecream/softserve/" + milkshake.id + ".jpg"; %>
+                    <a class="card icecream-card" style="cursor: pointer;">
+                        <img src=<%= src %> alt="softserve-img" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= milkshake.name %></h5>
+                            <p class="card-description d-none"><%= milkshake.description %></p>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+
         </div>
 
         <div id="polarbar-container" class="card-container">
-            <% allCharacters.forEach((character) => { %>
-                <% var src = "/images/characters/" + character.id + ".jpg"; %>
-                <a class="card character-card" style="cursor: pointer;">
-                    <img src=<%= src %> alt="character-img" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= character.data().name %></h5>
-                        <p class="card-description d-none"><%= character.data().description %></p>
-                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
-                    </div>
-                </a>
-            <% }) %>
+            
         </div>
 
         <div id="float-container" class="card-container">
-            <% allCharacters.forEach((character) => { %>
-                <% var src = "/images/characters/" + character.id + ".jpg"; %>
-                <a class="card character-card" style="cursor: pointer;">
-                    <img src=<%= src %> alt="character-img" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= character.data().name %></h5>
-                        <p class="card-description d-none"><%= character.data().description %></p>
-                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
-                    </div>
-                </a>
-            <% }) %>
+            
         </div>
 
         <div id="freeze-container" class="card-container">
-            <% allCharacters.forEach((character) => { %>
-                <% var src = "/images/characters/" + character.id + ".jpg"; %>
-                <a class="card character-card" style="cursor: pointer;">
-                    <img src=<%= src %> alt="character-img" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= character.data().name %></h5>
-                        <p class="card-description d-none"><%= character.data().description %></p>
-                        <p class="card-footer-p d-none"><%= character.data().flavors %></p>
-                    </div>
-                </a>
-            <% }) %>
+            
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="modal-img img-fluid" src="" alt="">
+                    <p class="modal-description"></p>
+                </div>
+                <div class="modal-footer">
+                    <p class="modal-footer-p"></p>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 <%- include("partials/footer", {jsFilename: "menu.js"}) %>

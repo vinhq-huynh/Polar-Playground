@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 
 // Menu route
 app.get("/menu", (req, res) => {
-    res.send("Our menu");
+    res.redirect("menu/cottoncandy");
 })
 
 // Cotton candy menu route
@@ -52,8 +52,18 @@ app.get("/menu/cottoncandy", async (req, res) => {
 
 // Ice cream menu route
 app.get("/menu/icecream", async (req, res) => {
-    const allCharacters = await db.collection('characters').where("seasonal", "==", true).get();
-    res.render("icecream", { allCharacters, __dirname });
+    const allCharacters = await db.collection('characters').where("published", "==", true).get();
+    const allMilkshakes = [
+        {id: "CC", name: "Cookies & Cream", description: "Vanilla ice cream, Oreo bits, chocolate sauce"},
+        {id: "PE", name: "Polar Espresso", description: "Coffee ice cream with toffee bits and cookie crisps mixed in then topped with cookie crisps and chocolate wafer"},
+        {id: "CO", name: "Chocolate OD", description: "Chocolate ice cream with cocoa puffs and Oreo bits mixed in then tooped with cocoa"},
+        {id: "SS", name: "Salt Shaker", description: "Salted Caramel ice cream, pretzels, Reece's pieces"},
+        {id: "PB", name: "PBBJ", description: "Strawberry ice cream, bananas, butterfinger bits, strawberry sauce"}, 
+        {id: "CK", name: "Cereal Killer", description: "Vanilla ice cream with frosted flakes mixed in then topped with fruity pebbles and rice krispies treats"},
+        {id: "HN", name: "Hella Nutella", description: "Nutella ice cream, toffee bits, cocoa puffs, chocolate sauce"}
+    ]
+
+    res.render("icecream", { allCharacters, allMilkshakes, __dirname });
 })
 
 app.get("/hours", (req, res) => {

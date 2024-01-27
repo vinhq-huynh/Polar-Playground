@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         $($(this).attr('href'))[0].scrollIntoView();
         scrollBy(0, -offset);
     }); 
-    
+
     // Sub menu buttons overflow check
     subMenuButtonOverflowCheck();
     
@@ -24,25 +24,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Character modal handler
-    const characterModal = document.querySelector("#characterModal");
-    const bootstrapModal = new bootstrap.Modal("#characterModal");
-
     document.querySelectorAll(".character-card").forEach((card) => {
         card.addEventListener("click", () => {
-            activateModal(card);
+            activateModal(card, "character");
         })
     })
 
-    function activateModal(card) {
+    // Ice cream modal handler
+    document.querySelectorAll(".icecream-card").forEach((card) => {
+        card.addEventListener("click", () => {
+            activateModal(card, "icecream");
+        })
+    })
+
+    function activateModal(card, option) {
+        const characterModal = document.querySelector("#myModal");
+        const bootstrapModal = new bootstrap.Modal("#myModal");
+
         const imgSrc = card.querySelector("img").getAttribute("src");
-        const characterName = card.querySelector(".card-title");
-        const characterDescription = card.querySelector(".card-description");
-        const characterFlavors = card.querySelector(".card-footer-p");
+        const modalTitle = card.querySelector(".card-title");
+        const modalDescription = card.querySelector(".card-description");
 
         characterModal.querySelector(".modal-img").setAttribute("src", imgSrc);
-        characterModal.querySelector(".modal-title").innerHTML = characterName.innerHTML;
-        characterModal.querySelector(".modal-description").innerHTML = characterDescription.innerHTML;
-        characterModal.querySelector(".modal-footer-p").innerHTML = "Flavors: " + characterFlavors.innerHTML;
+        characterModal.querySelector(".modal-title").innerHTML = modalTitle.innerHTML;
+        characterModal.querySelector(".modal-description").innerHTML = modalDescription.innerHTML;
+        
+        if (option === "character") {
+            const modalFooter = card.querySelector(".card-footer-p");
+            characterModal.querySelector(".modal-footer-p").innerHTML = "Flavors: " + modalFooter.innerHTML;
+        }
+
         bootstrapModal.show();
     }
 });
