@@ -89,11 +89,11 @@ app.get("/waittime", (req, res) => {
     
     // Build waittime object
     var waittimeObj = {
-        hour: 0,
-        minute: 0,
-        updatedTime: 0
+        hour: 1,
+        minute: 15,
+        lastUpdated: 10
     }
-    res.render("waittime", { waittimeDescriptions, waittimeObj });
+    res.render("waittime", { waittimeDescription : waittimeDescriptions[1], waittimeObj });
 })
 
 // This app is deployed on GCP App Engine, so it uses the specifed "PORT". Use 8080 otherwise.
@@ -101,17 +101,3 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}...`);
 });
-
-// const characters = [];
-    
-// characters.forEach(async (char) => {
-//     const data = {
-//         name: char,
-//         flavors: "",
-//         description: "",
-//         published: true,
-//         seasonal: false
-//     };
-      
-//     const res = await db.collection("characters").doc(char).set(data);
-// })

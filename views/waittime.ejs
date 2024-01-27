@@ -1,3 +1,26 @@
 <%- include("partials/header", { pageTitle: "Wait Time", cssFilename: "waittime.css"}) %>
+<div class="main-container">
+    <div class="waittime-header">
+        <h1>Live Wait Time</h1>
+    </div>
+    <div class="waittime-body">
+        <div class="waittime-description">
+            <p>It looks like <%= waittimeDescription %></p>
+            <p>The wait time to order is approximately...</p>           
+        </div>
 
+        <img src="/images/logo_bear.png" alt="">
+        <div class="waittime">
+            <h2> <span id="hour"><%= waittimeObj.hour %></span> hour <span id="minute"><%= waittimeObj.minute %></span> minutes</h2>
+            <p>Last updated <%= waittimeObj.lastUpdated %> minutes ago</p>
+            <div class="actions">
+                <a id="refresh" href="#">Refresh</a>
+                <a id="view-menu" href="/menu/cottoncandy">View Menu</a>
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>
 <%- include("partials/footer") %>
