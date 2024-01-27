@@ -12,7 +12,7 @@ p {
 }
 
 .waittime-header {
-    height: 50px;
+    height: 55px;
     position: sticky;
     top: calc(var(--nav-bar-height) * 0.7);
 
@@ -20,12 +20,16 @@ p {
     align-items: center;
     justify-content: center;
 
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 10px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 10px 8px 0px;
     z-index: 1;
 }
 
 h1, h2 {
     margin: 0;
+}
+
+.waittime-header > h1 {
+    font-size: 2rem;
 }
 
 .waittime-body {
@@ -35,17 +39,18 @@ h1, h2 {
 }
 
 .waittime-body > img {
-    width: 100px;
+    width: 110px;
 }
 
 .waittime-description {
-    font-weight: 200;
+    font-size: 1.2rem;
+    font-weight: 300;
     margin: 20px auto 5px auto;
 }
 
 .waittime {
     position: relative;
-    bottom: 40px;
+    bottom: 45px;
     padding: 25px;
 
     display: flex;
@@ -58,8 +63,13 @@ h1, h2 {
     border-radius: 20px;
 }
 
+h2 {
+    font-size: 2rem;
+    color: rgb(39, 39, 39);
+}
+
 #hour, #minute {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 700;
 }
 
@@ -78,14 +88,15 @@ h1, h2 {
 }
 
 .actions > a {
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin: 5px;
     border-radius: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 #refresh {
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(55, 55, 55);
 }
 
 #view-menu {

@@ -79,7 +79,7 @@ h1 {
     overflow: scroll;
 
     background-color: rgb(225, 225, 225);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 10px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 10px 8px 0px;
     z-index: 1;
 }
 
