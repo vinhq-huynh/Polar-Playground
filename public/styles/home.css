@@ -1,5 +1,9 @@
+body {
+    background-color: rgb(47, 47, 47);
+}
+
 .nav-bar-container {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .nav-bar-scrolled {

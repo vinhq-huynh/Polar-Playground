@@ -1,3 +1,27 @@
 <%- include("partials/header", { pageTitle: "About", cssFilename: "about.css"}) %>
-<h1>About us</h1>
+<div class="main-container">
+
+    <div class="faq-header">
+        <h1>FAQ</h1>
+    </div>
+    
+    <section class="faq-container">
+        <div class="accordion">
+            <% faqs.forEach((faq) => { %>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <%= faq.question %>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                        <strong><%= faq.answer1 %></strong> <%= faq.answer2 %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+          </div>
+    </section>
+</div>
 <%- include("partials/footer") %>

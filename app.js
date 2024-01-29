@@ -71,7 +71,11 @@ app.get("/hours", (req, res) => {
 })
 
 app.get("/about", (req, res) => {
-    res.render("about");
+    const faqs = [
+        {question: "Do you make custom cotton candy characters?", answer1: "No.", answer2: "Sorry no custom characters at the moment."},
+    ]
+    
+    res.render("about", { faqs });
 })
 
 // Waittime route
