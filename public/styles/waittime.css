@@ -55,7 +55,6 @@ h1, h2 {
     position: relative;
     bottom: 45px;
     padding: 25px;
-    margin: auto 30px;  
 
     display: flex;
     flex-direction: column;
@@ -80,21 +79,24 @@ h2 {
 }
 
 .waittime > p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 200;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .actions {
-    height: 25px;
-    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .actions > a {
-    padding: 8px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 55px;
+    padding: 20px;
     margin: 5px;
     border-radius: 30px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -103,11 +105,17 @@ h2 {
 #refresh {
     color: white;
     background-color: rgb(55, 55, 55);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 #view-menu {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
+}
+
+.fa-solid {
+    margin: 5px;
 }
 
 .waittime-faq {
