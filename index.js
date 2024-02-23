@@ -7,7 +7,7 @@ import Firestore, { FieldValue } from "@google-cloud/firestore"
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 
-// Use "public" as the folder for static content
+// Use "public" as the folder for static conten
 app.use(express.static("public"));
 
 // The default view engine is set to EJS, subsequent calls to res.render do not need to specify .ejs extension
@@ -73,10 +73,9 @@ app.get("/hours", (req, res) => {
 app.get("/about", (req, res) => {
     const faqs = [
         {question: "Do you make custom cotton candy characters?", answer1: "No.", answer2: "Sorry no custom characters at the moment."},
-        {question: "Do you make custom cotton candy characters?", answer1: "No.", answer2: "Sorry no custom characters at the moment."},
-        {question: "Do you make custom cotton candy characters?", answer1: "No.", answer2: "Sorry no custom characters at the moment."},
-        {question: "Do you make custom cotton candy characters?", answer1: "No.", answer2: "Sorry no custom characters at the moment."},
-   
+        {question: "How long is the wait time?", answer1: "It depends.", answer2: "Check out our wait time page for more information"},
+        {question: "How long do the characters last?", answer1: "It depends", answer2: "Anywhere from 5 minutes to hours depending on the humidity and bagging."},
+        {question: "Why are you guys so cool?", answer1: "We know.", answer2: "Jk we try."},
     ]
     
     res.render("about", { faqs });

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handling click hambuger menu bar
     document.querySelector('.fa-bars').addEventListener('click', () => {
-
         navbar_container.classList.toggle('nav-bar-dark');
         nav_links.classList.toggle('d-none');
     });

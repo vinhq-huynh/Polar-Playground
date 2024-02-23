@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {   
-    var offset = 80;
+    // var offset = 80;
 
-    $('.navbar li a').click(function(event) {
-        event.preventDefault();
-        $($(this).attr('href'))[0].scrollIntoView();
-        scrollBy(0, -offset);
-    }); 
+    // $('.navbar li a').click(function(event) {
+    //     event.preventDefault();
+    //     $($(this).attr('href'))[0].scrollIntoView();
+    //     scrollBy(0, -offset);
+    // }); 
 
     // Sub menu buttons overflow check
     subMenuButtonOverflowCheck();
